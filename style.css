@@ -583,3 +583,74 @@ body {
         height: 120px;
     }
 }
+
+.commands-section {
+    padding: 100px 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--surface-color); /* Latar belakang berbeda agar menonjol */
+    border-radius: 25px;
+    margin-top: -50px; /* Sedikit tumpang tindih dengan section fitur */
+    margin-bottom: 100px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: -60px auto 60px; /* Posisi di bawah judul */
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+.commands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.command-category {
+    background: var(--surface-light);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid var(--surface-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.command-category:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.command-category h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--surface-color);
+    padding-bottom: 15px;
+}
+
+.command-category ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.command-category li {
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.command-category code {
+    background-color: var(--surface-color);
+    color: #87CEEB; /* Warna teks kode yang cerah */
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
