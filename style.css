@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-    --primary-color: #007BFF;    /* Biru utama yang cerah */
-    --secondary-color: #00A6FF;   /* Biru aksen yang lebih terang (cyan) */
+    --primary-color: #008CFF;    /* Biru utama yang sedikit lebih cerah */
+    --secondary-color: #00BFFF;   /* Biru aksen yang lebih terang (sky blue) */
     --background-color: #010418; /* Latar belakang biru sangat gelap (navy) */
-    --surface-color: #08113B;    /* Warna permukaan kartu/panel */
-    --surface-light: #121E55;   /* Warna permukaan sedikit lebih terang */
+    --surface-color: #0B1641;    /* Warna permukaan kartu/panel, sedikit lebih terang */
+    --surface-light: #16265C;   /* Warna permukaan sedikit lebih terang dan jelas */
     --text-primary: #FFFFFF;
-    --text-secondary: #A0C4FF;   /* Teks sekunder biru muda */
-    --accent-glow: rgba(0, 123, 255, 0.4); /* Efek glow biru */
+    --text-secondary: #C0DFFF;   /* Teks sekunder biru muda terang */
+    --accent-glow: rgba(0, 140, 255, 0.4); /* Efek glow biru yang lebih intens */
+    --text-glow: rgba(0, 175, 255, 0.6); /* Glow khusus untuk teks */
 }
 
 /* Base Styles */
@@ -166,8 +167,8 @@ body {
     justify-content: center;
     text-align: center;
     padding: 0 25px;
-    background: radial-gradient(circle at top left, #121E55 0%, transparent 50%),
-                radial-gradient(circle at bottom right, #08113B 0%, transparent 50%),
+    background: radial-gradient(circle at top left, #16265C 0%, transparent 50%),
+                radial-gradient(circle at bottom right, #0B1641 0%, transparent 50%),
                 var(--background-color);
     background-size: 100% 100%;
     position: relative;
@@ -179,7 +180,7 @@ body {
     content: '';
     position: absolute;
     border-radius: 50%;
-    background: rgba(0, 123, 255, 0.08); /* Warna partikel */
+    background: rgba(0, 140, 255, 0.08); /* Warna partikel disesuaikan */
     animation: moveParticles 15s infinite ease-in-out alternate;
     z-index: 0;
 }
@@ -218,10 +219,10 @@ body {
     font-size: 56px;
     font-weight: 700;
     margin-bottom: 25px;
-    background: linear-gradient(90deg, #A0C4FF, #89CFF0, #00A6FF);
+    background: linear-gradient(90deg, #E0FFFF, #87CEEB, #00BFFF); /* Gradien biru yang lebih terang */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 15px var(--accent-glow);
+    text-shadow: 0 0 20px var(--text-glow), 0 0 30px rgba(0, 191, 255, 0.3); /* Glow teks lebih menonjol */
 }
 
 .hero-subtitle {
@@ -254,6 +255,7 @@ body {
     color: var(--text-primary);
     position: relative;
     padding-bottom: 15px;
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.3); /* Sedikit glow pada judul section */
 }
 
 .section-title::after {
@@ -294,7 +296,7 @@ body {
 
 .card-icon {
     font-size: 55px;
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Warna ikon lebih terang */
     margin-bottom: 25px;
     background: var(--surface-light);
     width: 90px;
@@ -305,13 +307,17 @@ body {
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.4); /* Glow ikon lebih cerah */
 }
 
 .feature-card h3 {
     font-size: 24px;
     margin-bottom: 15px;
     color: var(--text-primary);
+    background: linear-gradient(90deg, #A0C4FF, #87CEEB); /* Gradien untuk judul kartu */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 8px rgba(135, 206, 235, 0.5); /* Glow judul kartu */
 }
 
 .feature-card p {
@@ -358,6 +364,7 @@ body {
     font-weight: 600;
     margin-bottom: 8px;
     color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(0, 140, 255, 0.5); /* Glow nama developer */
 }
 
 .developer-title {
