@@ -1,12 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
+    const navLogoImg = document.querySelector('.nav-logo img'); // Pilih gambar logo
 
     // Animasi Navbar saat di-scroll
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
+            if (navLogoImg) {
+                navLogoImg.style.transform = 'scale(0.9) rotate(-5deg)'; // Animasi logo
+            }
         } else {
             navbar.classList.remove('scrolled');
+            if (navLogoImg) {
+                navLogoImg.style.transform = 'scale(1) rotate(0deg)'; // Kembali ke normal
+            }
         }
     });
 
