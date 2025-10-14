@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-    --primary-color: #8A2BE2; /* Warna ungu utama */
-    --secondary-color: #A020F0; /* Warna ungu aksen lebih cerah */
-    --background-color: #0A041C; /* Latar belakang sangat gelap */
-    --surface-color: #1A0D3C; /* Warna permukaan kartu/panel */
-    --surface-light: #2C185A; /* Warna permukaan sedikit lebih terang */
+    --primary-color: #007BFF;    /* Biru utama yang cerah */
+    --secondary-color: #00A6FF;   /* Biru aksen yang lebih terang (cyan) */
+    --background-color: #010418; /* Latar belakang biru sangat gelap (navy) */
+    --surface-color: #08113B;    /* Warna permukaan kartu/panel */
+    --surface-light: #121E55;   /* Warna permukaan sedikit lebih terang */
     --text-primary: #FFFFFF;
-    --text-secondary: #E0AAFF; /* Teks sekunder ungu muda */
-    --accent-glow: rgba(160, 32, 240, 0.4); /* Efek glow untuk aksen */
+    --text-secondary: #A0C4FF;   /* Teks sekunder biru muda */
+    --accent-glow: rgba(0, 123, 255, 0.4); /* Efek glow biru */
 }
 
 /* Base Styles */
@@ -23,7 +23,7 @@ body {
     background-color: var(--background-color);
     color: var(--text-primary);
     line-height: 1.6;
-    overflow-x: hidden; /* Mencegah scroll horizontal */
+    overflow-x: hidden;
 }
 
 /* Utility Classes */
@@ -87,12 +87,12 @@ body {
     padding: 15px 0;
     z-index: 1000;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    background-color: transparent; /* Awalnya transparan */
+    background-color: transparent;
 }
 
 .navbar.scrolled {
-    background-color: rgba(10, 4, 28, 0.9); /* Sedikit gelap saat di-scroll */
-    backdrop-filter: blur(8px); /* Efek blur yang modern */
+    background-color: rgba(1, 4, 24, 0.9);
+    backdrop-filter: blur(8px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
@@ -166,12 +166,12 @@ body {
     justify-content: center;
     text-align: center;
     padding: 0 25px;
-    background: radial-gradient(circle at top left, #2C185A 0%, transparent 50%),
-                radial-gradient(circle at bottom right, #1A0D3C 0%, transparent 50%),
+    background: radial-gradient(circle at top left, #121E55 0%, transparent 50%),
+                radial-gradient(circle at bottom right, #08113B 0%, transparent 50%),
                 var(--background-color);
     background-size: 100% 100%;
     position: relative;
-    overflow: hidden; /* Pastikan background particles tidak keluar */
+    overflow: hidden;
 }
 
 /* Background Particles Effect */
@@ -179,7 +179,7 @@ body {
     content: '';
     position: absolute;
     border-radius: 50%;
-    background: rgba(160, 32, 240, 0.1); /* Warna partikel */
+    background: rgba(0, 123, 255, 0.08); /* Warna partikel */
     animation: moveParticles 15s infinite ease-in-out alternate;
     z-index: 0;
 }
@@ -208,10 +208,9 @@ body {
     100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
 }
 
-
 .hero-content {
     max-width: 900px;
-    position: relative; /* Agar konten tetap di atas partikel */
+    position: relative;
     z-index: 1;
 }
 
@@ -219,7 +218,7 @@ body {
     font-size: 56px;
     font-weight: 700;
     margin-bottom: 25px;
-    background: linear-gradient(90deg, #E0AAFF, #C77DFF, #A020F0);
+    background: linear-gradient(90deg, #A0C4FF, #89CFF0, #00A6FF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 0 15px var(--accent-glow);
@@ -306,7 +305,7 @@ body {
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 0 0 15px rgba(160, 32, 240, 0.3);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
 }
 
 .feature-card h3 {
@@ -446,10 +445,10 @@ body {
 
 @media (max-width: 768px) {
     .navbar .nav-menu, .navbar .nav-dashboard-btn {
-        display: none; /* Sembunyikan menu dan tombol dashboard di navbar untuk tampilan mobile */
+        display: none;
     }
     .nav-container {
-        justify-content: center; /* Logo di tengah jika menu disembunyikan */
+        justify-content: center;
     }
     .hero-title {
         font-size: 38px;
@@ -462,7 +461,7 @@ body {
         gap: 15px;
     }
     .btn {
-        width: 80%; /* Tombol lebih lebar di mobile */
+        width: 80%;
         margin: 0 auto;
     }
     .section-title {
