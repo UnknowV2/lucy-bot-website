@@ -308,25 +308,17 @@ body {
     bottom: 0;
     border-radius: 20px;
     padding: 1px; /* Ketebalan border */
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), transparent, var(--secondary-color));
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     z-index: 0;
     opacity: 0;
-    transition: opacity 0.4s ease, transform 0.8s ease-out;
-    transform: scale(0.8);
+    transition: opacity 0.4s ease;
 }
 
 .feature-card:hover::before {
     opacity: 1;
-    transform: scale(1);
-    animation: rotateBorder 3s infinite linear;
-}
-
-@keyframes rotateBorder {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
 }
 
 
@@ -338,7 +330,6 @@ body {
 
 .card-icon {
     font-size: 55px;
-    /* color: var(--secondary-color); <= Ini dihapus karena kita akan memberi warna spesifik */
     margin-bottom: 25px;
     background: var(--surface-light);
     width: 90px;
@@ -388,13 +379,80 @@ body {
     z-index: 1;
 }
 
+/* Command List Section */
+.commands-section {
+    padding: 100px 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--surface-color); /* Latar belakang berbeda agar menonjol */
+    border-radius: 25px;
+    margin-top: -50px; /* Sedikit tumpang tindih dengan section fitur */
+    margin-bottom: 100px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: -60px auto 60px; /* Posisi di bawah judul */
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+.commands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.command-category {
+    background: var(--surface-light);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid var(--surface-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.command-category:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.command-category h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--surface-color);
+    padding-bottom: 15px;
+}
+
+.command-category ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.command-category li {
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.command-category code {
+    background-color: var(--surface-color);
+    color: #87CEEB; /* Warna teks kode yang cerah */
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
 /* Developer Section */
 .developer-section {
-    background-color: var(--surface-color);
-    border-radius: 25px;
-    margin-bottom: 100px;
-    padding: 60px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    padding-bottom: 100px;
 }
 
 .developer-card {
@@ -545,8 +603,11 @@ body {
         height: 70px;
         font-size: 40px;
     }
+    .commands-section {
+        padding: 80px 20px;
+    }
     .developer-section {
-        padding: 40px 25px;
+        padding: 80px 25px;
     }
     .developer-card {
         padding: 30px;
@@ -583,74 +644,3 @@ body {
         height: 120px;
     }
 }
-
-.commands-section {
-    padding: 100px 25px;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: var(--surface-color); /* Latar belakang berbeda agar menonjol */
-    border-radius: 25px;
-    margin-top: -50px; /* Sedikit tumpang tindih dengan section fitur */
-    margin-bottom: 100px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-}
-
-.section-subtitle {
-    text-align: center;
-    max-width: 600px;
-    margin: -60px auto 60px; /* Posisi di bawah judul */
-    color: var(--text-secondary);
-    font-size: 16px;
-}
-
-.commands-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.command-category {
-    background: var(--surface-light);
-    padding: 30px;
-    border-radius: 15px;
-    border: 1px solid var(--surface-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.command-category:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.command-category h3 {
-    font-size: 22px;
-    margin-bottom: 20px;
-    color: var(--secondary-color);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    border-bottom: 1px solid var(--surface-color);
-    padding-bottom: 15px;
-}
-
-.command-category ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.command-category li {
-    color: var(--text-secondary);
-    margin-bottom: 12px;
-    font-size: 15px;
-}
-
-.command-category code {
-    background-color: var(--surface-color);
-    color: #87CEEB; /* Warna teks kode yang cerah */
-    padding: 3px 8px;
-    border-radius: 5px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
-    margin-right: 8px;
-}
-
