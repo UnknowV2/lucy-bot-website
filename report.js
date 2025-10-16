@@ -1,31 +1,43 @@
-// Tunggu hingga seluruh halaman dimuat
-document.addEventListener('DOMContentLoaded', function() {
-    // Pilih formulir berdasarkan ID yang kita tambahkan
-    const form = document.getElementById('reportForm');
+// GANTI SELURUH ISI report.js DENGAN INI
 
-    // Tambahkan event listener untuk saat formulir disubmit
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('reportForm');
+    const usernameInput = document.getElementById('username');
+    const loginContainer = document.getElementById('login-container');
+    const tagContainer = document.getElementById('discord-tag-container');
+
+    // Cek apakah ada parameter 'discord_user' di URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const discordUser = urlParams.get('discord_user');
+
+    if (discordUser) {
+        // Jika ada, isi kolom input, tampilkan, dan sembunyikan tombol login
+        usernameInput.value = decodeURIComponent(discordUser);
+        tagContainer.style.display = 'block';
+        loginContainer.style.display = 'none';
+    } else {
+        // Jika tidak ada, sembunyikan kolom input dan tampilkan tombol login
+        tagContainer.style.display = 'none';
+        loginContainer.style.display = 'block';
+    }
+
     form.addEventListener('submit', function(event) {
-        // Hentikan aksi default formulir (yang akan me-reload halaman)
         event.preventDefault();
 
-        // GANTI DENGAN URL WEBHOOK ANDA YANG SEBENARNYA
         const webhookURL = "https://discord.com/api/webhooks/1428241871364292799/uxc8BUYTygFqiE3fQI_PFcoQhQ8ZtbnL_CC93-WoDZYXZ4qFeH1IcwQRXaPXEHO1eD8A";
 
-        // Ambil data dari setiap input di dalam formulir
-        const formData = new FormData(form);
-        const username = formData.get('username') || "Tidak disebutkan";
-        const command = formData.get('command');
-        const description = formData.get('description');
-        const steps = formData.get('steps');
+        // Ambil data dari form
+        const username = usernameInput.value || "Login Gagal / Tidak Login"; // Fallback jika kosong
+        const command = document.getElementById('command').value;
+        const description = document.getElementById('description').value;
+        const steps = document.getElementById('steps').value;
 
-        // Buat format pesan yang akan dikirim ke Discord
-        // Kita akan menggunakan format "Embed" agar terlihat keren
         const payload = {
-            username: "Lucy Bot Bug Reporter", // Nama bot yang muncul di Discord
-            avatar_url: "https://cdn.discordapp.com/attachments/1414606152179912714/1427751984110506207/IMG_0785.jpg?ex=68f00127&is=68eeafa7&hm=315e34d7d922f150e40d502c51d3670f72f3b94331c46d0ece63a2cd42d7814e&", // Avatar bot
+            username: "Lucy Bot Bug Reporter",
+            avatar_url: "https://cdn.discordapp.com/attachments/1414606152179912714/1427751984110506207/IMG_0785.jpg?ex=68f00127&is=68eeafa7&hm=315e34d7d922f150e40d502c51d3670f72f3b94331c46d0ece63a2cd42d7814e&",
             embeds: [{
                 title: `🐞 Laporan Bug Baru!`,
-                color: 16711680, // Warna merah untuk bug
+                color: 16711680,
                 fields: [
                     { name: "👤 Pelapor", value: `\`\`\`${username}\`\`\``, inline: true },
                     { name: "📟 Perintah Bermasalah", value: `\`\`\`${command}\`\`\``, inline: true },
@@ -38,18 +50,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }]
         };
 
-        // Kirim data ke URL Webhook menggunakan Fetch API
         fetch(webhookURL, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
         })
         .then(response => {
             if (response.ok) {
                 alert('Laporan berhasil dikirim! Terima kasih atas bantuan Anda.');
-                form.reset(); // Kosongkan formulir setelah berhasil
+                form.reset();
+                // Arahkan kembali ke halaman report tanpa parameter
+                window.location.href = window.location.pathname;
             } else {
                 alert('Gagal mengirim laporan. Coba lagi nanti.');
             }
