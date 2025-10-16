@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report Bug - Lucy Bot</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon"
-        href="https://cdn.discordapp.com/attachments/1414606152179912714/1427751984110506207/IMG_0785.jpg?ex=68f00127&is=68eeafa7&hm=315e34d7d922f150e40d502c51d3670f72f3b94331c46d0ece63a2cd42d7814e&"
-        type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/1414606152179912714/1427751984110506207/IMG_0785.jpg?ex=68f00127&is=68eeafa7&hm=315e34d7d922f150e40d502c51d3670f72f3b94331c46d0ece63a2cd42d7814e&" type="image/x-icon">
 </head>
-
 <body>
-    <nav class="navbar scrolled">
-        <div class="nav-container">
+    <nav class="navbar scrolled"> <div class="nav-container">
             <a href="index.html" class="nav-logo">
-                <img src="https://cdn.discordapp.com/attachments/1414606152179912714/1427751984110506207/IMG_0785.jpg?ex=68f00127&is=68eeafa7&hm=315e34d7d922f150e40d502c51d3670f72f3b94331c46d0ece63a2cd42d7814e&"
-                    alt="Lucy Bot Logo">
+                <img src="https://cdn.discordapp.com/attachments/1414606152179912714/1427751984110506207/IMG_0785.jpg?ex=68f00127&is=68eeafa7&hm=315e34d7d922f150e40d502c51d3670f72f3b94331c46d0ece63a2cd42d7814e&" alt="Lucy Bot Logo">
                 Lucy Bot
             </a>
             <ul class="nav-menu">
@@ -40,23 +32,13 @@
             <div class="report-header">
                 <i class="fas fa-bug-slash"></i>
                 <h2 class="section-title">Lacak & Hancurkan Bug</h2>
-                <p class="section-subtitle">Bantuan Anda sangat berarti untuk membuat Lucy Bot lebih baik. Laporkan bug
-                    yang Anda temukan dengan detail di bawah ini.</p>
+                <p class="section-subtitle">Bantuan Anda sangat berarti untuk membuat Lucy Bot lebih baik. Laporkan bug yang Anda temukan dengan detail di bawah ini.</p>
             </div>
             <form class="report-form" id="reportForm">
                 <div class="form-row">
-                    <div class="form-group" id="discord-tag-container" style="display: none;">
+                    <div class="form-group">
                         <label for="username"><i class="fab fa-discord"></i> Discord Tag</label>
-                        <input type="text" id="username" name="username" readonly
-                            style="background-color: #010418; cursor: not-allowed;">
-                    </div>
-
-                    <div class="form-group" id="login-container" style="text-align: center;">
-                        <p style="margin-bottom: 15px;">Login untuk mengisi Discord Tag Anda secara otomatis.</p>
-                        <a href="http://194.56.225.132:5002:5002/auth/discord" class="btn btn-primary"
-                            style="width: 100%;">
-                            <i class="fab fa-discord"></i> Login dengan Discord
-                        </a>
+                        <input type="text" id="username" name="username" placeholder="Contoh: CIBOO#1234 (Opsional)">
                     </div>
                     <div class="form-group">
                         <label for="command"><i class="fas fa-terminal"></i> Perintah Bermasalah</label>
@@ -65,15 +47,11 @@
                 </div>
                 <div class="form-group">
                     <label for="description"><i class="fas fa-comment-dots"></i> Deskripsi Bug</label>
-                    <textarea id="description" name="description" rows="5"
-                        placeholder="Jelaskan secara rinci apa yang terjadi, apa yang seharusnya terjadi, dan pesan error jika ada."
-                        required></textarea>
+                    <textarea id="description" name="description" rows="5" placeholder="Jelaskan secara rinci apa yang terjadi, apa yang seharusnya terjadi, dan pesan error jika ada." required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="steps"><i class="fas fa-list-check"></i> Langkah Reproduksi</label>
-                    <textarea id="steps" name="steps" rows="5"
-                        placeholder="1. Saya menggunakan perintah...\n2. Kemudian saya melakukan...\n3. Bug yang terjadi adalah..."
-                        required></textarea>
+                    <textarea id="steps" name="steps" rows="5" placeholder="1. Saya menggunakan perintah...\n2. Kemudian saya melakukan...\n3. Bug yang terjadi adalah..." required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary btn-submit-report">
                     <i class="fas fa-paper-plane"></i> Kirim Laporan
@@ -87,8 +65,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src="report.js"></script>
+    <script src="report.js"></script> </body>
 </body>
-</body>
-
 </html>
