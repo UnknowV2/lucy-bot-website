@@ -50,7 +50,7 @@ body {
     overflow: hidden;
 }
 
-/* Efek Bintang (Opsional - CSS Only) */
+/* Efek Bintang */
 #stars, #stars2 {
     width: 100%;
     height: 100%;
@@ -302,53 +302,7 @@ body {
 }
 
 /* ========================================= */
-/* 6. STATS SECTION                          */
-/* ========================================= */
-.stats-section {
-    padding: 20px 10% 80px;
-}
-
-.stats-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-}
-
-.stat-card {
-    background: var(--card-bg);
-    border: var(--glass-border);
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s;
-}
-
-.stat-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.stat-card i {
-    font-size: 2.2rem;
-    color: var(--secondary);
-    margin-bottom: 15px;
-    filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.4));
-}
-
-.stat-card h3 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.stat-card p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-/* ========================================= */
-/* 7. FEATURES SECTION                       */
+/* 6. FEATURES SECTION                       */
 /* ========================================= */
 .features-section {
     padding: 100px 10%;
@@ -416,7 +370,7 @@ body {
 .icon-premium i { color: #ffa502; text-shadow: 0 0 15px rgba(255, 165, 2, 0.4); }
 .icon-eco i { color: #3742fa; text-shadow: 0 0 15px rgba(55, 66, 250, 0.4); }
 .icon-ticket i { color: #a55eea; text-shadow: 0 0 15px rgba(165, 94, 234, 0.4); }
-.icon-log i { color: #00cec9; text-shadow: 0 0 15px rgba(0, 206, 201, 0.4); } /* Ikon Log Baru */
+.icon-log i { color: #00cec9; text-shadow: 0 0 15px rgba(0, 206, 201, 0.4); }
 
 .feature-card h3 {
     margin-bottom: 15px;
@@ -430,124 +384,93 @@ body {
 }
 
 /* ========================================= */
-/* 8. COMMANDS & TERMINAL                    */
+/* 7. COMMANDS GRID (NEW DESIGN)             */
 /* ========================================= */
 .commands-section {
     padding: 100px 10%;
     background: linear-gradient(180deg, transparent, rgba(79, 70, 229, 0.05), transparent);
 }
 
-.content-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    flex-wrap: wrap;
+.commands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
 }
 
-.text-col {
-    flex: 1;
-    min-width: 300px;
-}
-
-.text-col h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.cmd-list {
-    margin: 40px 0;
-}
-
-.cmd-item {
-    margin-bottom: 15px;
-    background: rgba(255,255,255,0.03);
-    padding: 18px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.cmd-card {
+    background: rgba(255, 255, 255, 0.03);
     border: var(--glass-border);
+    border-radius: 16px;
+    padding: 25px;
     transition: 0.3s;
-}
-
-.cmd-item:hover {
-    background: rgba(255,255,255,0.07);
-    transform: translateX(5px);
-}
-
-.cmd-item code {
-    background: rgba(79, 70, 229, 0.2);
-    color: var(--secondary);
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-family: 'Courier New', monospace;
-    font-weight: bold;
-    font-size: 0.95rem;
-    min-width: 140px;
-    text-align: center;
-}
-
-.btn-text {
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.btn-text:hover {
-    color: var(--secondary);
-    gap: 10px;
-    transition: 0.3s;
-}
-
-/* Terminal Style */
-.img-col {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    min-width: 300px;
-}
-
-.terminal-window {
-    background: #1e1e1e;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 550px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    border: 1px solid #333;
+    position: relative;
     overflow: hidden;
 }
 
-.terminal-header {
-    background: #2d2d2d;
-    padding: 12px 20px;
+.cmd-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-5px);
+    border-color: var(--secondary);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.cmd-header {
     display: flex;
-    gap: 8px;
-    border-bottom: 1px solid #333;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
-.dot { width: 12px; height: 12px; border-radius: 50%; }
-.red { background: #ff5f56; }
-.yellow { background: #ffbd2e; }
-.green { background: #27c93f; }
+.cmd-header i {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+}
 
-.terminal-body {
-    padding: 25px;
+.cmd-badge {
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+
+.cmd-badge.admin { background: rgba(231, 76, 60, 0.2); color: #e74c3c; }
+.cmd-badge.premium { background: rgba(241, 196, 15, 0.2); color: #f1c40f; }
+.cmd-badge.setup { background: rgba(52, 152, 219, 0.2); color: #3498db; }
+.cmd-badge.economy { background: rgba(46, 204, 113, 0.2); color: #2ecc71; }
+
+.cmd-code {
+    display: block;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 8px;
     font-family: 'Courier New', monospace;
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-weight: bold;
+    color: var(--secondary);
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.terminal-body p { margin-bottom: 12px; }
-.user { color: #3498db; font-weight: bold; }
-.bot { color: #f1c40f; font-weight: bold; }
-.success { color: #2ecc71; }
+.cmd-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.cmd-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.cmd-footer {
+    text-align: center;
+    margin-top: 50px;
+}
 
 /* ========================================= */
-/* 9. DEVELOPER & FOOTER                     */
+/* 8. DEVELOPER & FOOTER                     */
 /* ========================================= */
 .developer-section {
     padding: 100px 10%;
@@ -625,7 +548,7 @@ body {
 .footer-links a:hover { color: var(--primary); }
 
 /* ========================================= */
-/* 10. REPORT BUG PAGE STYLES (New Theme)    */
+/* 9. REPORT BUG PAGE STYLES                 */
 /* ========================================= */
 .report-section {
     padding: 140px 10% 80px;
@@ -717,11 +640,10 @@ body {
 }
 
 /* ========================================= */
-/* 11. RESPONSIVE DESIGN                     */
+/* 10. RESPONSIVE DESIGN                     */
 /* ========================================= */
 @media (max-width: 992px) {
     .hero-title { font-size: 3rem; }
-    .content-wrapper { flex-direction: column; }
     .nav-menu { gap: 20px; }
 }
 
