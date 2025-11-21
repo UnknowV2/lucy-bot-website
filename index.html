@@ -3,158 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucy Bot - Bot Discord Multifungsi Anda</title>
+    <title>Lucy Bot - Ultimate Discord Assistant</title>
+    
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="https://cdn.discordapp.com/attachments/1414606152179912714/1427751984110506207/IMG_0785.jpg?ex=690d0227&is=690bb0a7&hm=416da9f6daf5e4b4dd3623086b31c111e71a87047f01242ee59c90a4c9551cc6&" type="image/x-icon">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/1414606152179912714/1427751984110506207/IMG_0785.jpg" type="image/x-icon">
 </head>
 <body>
+    
+    <div class="bg-animation"></div>
+
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">
-                <img src="https://cdn.discordapp.com/attachments/1414606152179912714/1427751984110506207/IMG_0785.jpg?ex=690d0227&is=690bb0a7&hm=416da9f6daf5e4b4dd3623086b31c111e71a87047f01242ee59c90a4c9551cc6&" alt="Lucy Bot Logo">
+                <img src="https://cdn.discordapp.com/attachments/1414606152179912714/1427751984110506207/IMG_0785.jpg" alt="Lucy Bot">
                 Lucy Bot
             </a>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
             <ul class="nav-menu">
+                <li><a href="#home">Beranda</a></li>
                 <li><a href="#features">Fitur</a></li>
+                <li><a href="#stats">Statistik</a></li>
                 <li><a href="#commands">Perintah</a></li>
-                <li><a href="#developer">Developer</a></li>
-                <li><a href="https://discord.gg/fZYKGtRmfZ" target="_blank">Support</a></li>
-                <li><a href="report.html">Report Bug</a></li>
+                <li><a href="report.html" class="nav-link-danger">Lapor Bug</a></li>
             </ul>
-            <a href="http://194.56.225.132:5002/" target="_blank" class="btn btn-secondary nav-dashboard-btn">
-                <i class="fas fa-chart-line"></i> Dashboard
+            <a href="http://194.56.225.132:5002/" target="_blank" class="btn btn-glow nav-dashboard-btn">
+                Dashboard <i class="fas fa-external-link-alt"></i>
             </a>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content reveal">
-            <h1 class="hero-title">Tingkatkan Server Discord Anda dengan Lucy Bot</h1>
-            <p class="hero-subtitle">Bot multifungsi dengan sistem ekonomi, leveling, moderasi canggih, logging lengkap, dan dashboard real-time yang interaktif.</p>
+    <header id="home" class="hero">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <span class="badge-new">v4.3.5 Available Now</span>
+            <h1 class="hero-title">Kelola Server Discord <br> <span class="text-gradient">Tanpa Batas</span></h1>
+            <p class="hero-subtitle">
+                Bot All-in-One dengan <strong>Voice Hub Privat</strong>, <strong>Sistem Ekonomi Global</strong>, 
+                <strong>Moderasi Canggih</strong>, dan <strong>Admin Panel</strong> interaktif.
+            </p>
             <div class="hero-buttons">
                 <a href="https://discord.com/oauth2/authorize?client_id=1414122108812005489&permissions=8&integration_type=0&scope=bot" target="_blank" class="btn btn-primary">
-                    <i class="fab fa-discord"></i> Tambahkan ke Server
+                    <i class="fab fa-discord"></i> Invite Lucy
                 </a>
-                 <a href="#features" class="btn btn-outline">
-                    Lihat Fitur <i class="fas fa-arrow-down"></i>
+                <a href="#features" class="btn btn-outline">
+                    Pelajari Fitur <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
+        </div>
+        <div class="hero-image" data-aos="fade-left" data-aos-duration="1200">
+            <img src="https://share.creavite.co/6734d0b060628bcf0892699d.gif" alt="Lucy Bot Interface" class="floating-img">
         </div>
     </header>
 
-    <main id="features" class="features-section">
-        <h2 class="section-title reveal">Fitur Andalan Lucy Bot</h2>
-        <div class="features-grid">
-            <div class="feature-card reveal">
-                <div class="card-icon">
-                    <i class="fas fa-ranking-star"></i>
-                </div>
-                <h3>Sistem Leveling Aktif</h3>
-                <p>Tingkatkan interaksi server dengan sistem XP otomatis. Anggota akan naik level saat aktif berkirim pesan, lengkap dengan notifikasi level-up.</p>
+    <section id="stats" class="stats-section">
+        <div class="stats-container">
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fas fa-server"></i>
+                <h3 id="server-count">Loading...</h3>
+                <p>Server Terhubung</p>
             </div>
-            <div class="feature-card reveal">
-                <div class="card-icon">
-                    <i class="fas fa-coins"></i>
-                </div>
-                <h3>Sistem Ekonomi & Game</h3>
-                <p>Sistem koin dengan hadiah harian, transfer, dan leaderboard. Mainkan game seru seperti slot, adu kartu, dan dadu!</p>
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-users"></i>
+                <h3 id="user-count">Loading...</h3>
+                <p>Pengguna Dilayani</p>
             </div>
-            <div class="feature-card reveal">
-                <div class="card-icon">
-                    <i class="fas fa-gavel"></i>
-                </div>
-                <h3>Moderasi Profesional</h3>
-                <p>Kelola server Anda dengan mudah menggunakan perintah kick, role permanen, dan role berjangka waktu.</p>
-            </div>
-            <div class="feature-card reveal">
-                <div class="card-icon">
-                    <i class="fas fa-clipboard-list"></i>
-                </div>
-                <h3>Logging Canggih</h3>
-                <p>Sistem log via Webhook otomatis untuk semua aktivitas server: pesan, member, channel, role, dan lainnya.</p>
-            </div>
-            <div class="feature-card reveal">
-                <div class="card-icon">
-                    <i class="fas fa-headset"></i>
-                </div>
-                <h3>Sistem Tiket & Register</h3>
-                <p>Panel dukungan tiket pribadi dan sistem registrasi member baru untuk menjaga server tetap terorganisir dan aman.</p>
-            </div>
-            <div class="feature-card reveal">
-                <div class="card-icon">
-                    <i class="fas fa-chart-simple"></i>
-                </div>
-                <h3>Dashboard Real-Time</h3>
-                <p>Pantau statistik bot seperti uptime, latensi, penggunaan memori, dan daftar server secara langsung melalui web.</p>
-            </div>
-        </div>
-    </main>
-
-    <section id="commands" class="commands-section">
-        <h2 class="section-title reveal">Daftar Perintah</h2>
-        <p class="section-subtitle reveal">Berikut adalah beberapa perintah utama yang bisa Anda gunakan. Untuk daftar lengkap, gunakan perintah <code>/help</code> di server Anda.</p>
-        <div class="commands-grid">
-            <div class="command-category reveal">
-                <h3><i class="fas fa-coins"></i> Ekonomi & Game</h3>
-                <ul>
-                    <li><code>/cash</code> - Mengecek saldo koin Anda.</li>
-                    <li><code>/daily</code> - Mengklaim hadiah koin harian.</li>
-                    <li><code>/give</code> - Memberikan koin ke pengguna lain.</li>
-                    <li><code>/leaderboard</code> - Menampilkan papan peringkat.</li>
-                    <li><code>!spin [bet]</code> - Memutar mesin slot.</li>
-                    <li><code>!card [bet]</code> - Bermain tebak kartu tertinggi.</li>
-                    <li><code>!dadu [bet]</code> - Bermain adu dadu.</li>
-                </ul>
-            </div>
-            <div class="command-category reveal">
-                <h3><i class="fas fa-gavel"></i> Moderasi</h3>
-                <ul>
-                    <li><code>/kick</code> - Mengeluarkan anggota dari server.</li>
-                    <li><code>/purge</code> - Menghapus pesan dalam jumlah besar.</li>
-                    <li><code>/give-role</code> - Memberikan peran permanen.</li>
-                    <li><code>/remove-role</code> - Menghapus peran dari anggota.</li>
-                    <li><code>/role-time</code> - Memberi peran berjangka waktu.</li>
-                    <li><code>/announcement</code> - Mengirim pengumuman.</li>
-                </ul>
-            </div>
-            <div class="command-category reveal">
-                <h3><i class="fas fa-cogs"></i> Konfigurasi (Admin)</h3>
-                <ul>
-                    <li><code>/set-logs</code> - Mengatur channel log server.</li>
-                    <li><code>/set-join-leave</code> - Mengatur log anggota keluar/masuk.</li>
-                    <li><code>/set-ticket</code> - Mengatur panel sistem tiket.</li>
-                    <li><code>/set-autorole</code> - Mengatur peran otomatis.</li>
-                    <li><code>/set-leveling-logs</code> - Mengatur log level-up.</li>
-                    <li><code>/giveaway start</code> - Memulai giveaway.</li>
-                </ul>
+            <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                <i class="fas fa-bolt"></i>
+                <h3 id="ping-count">Loading...</h3>
+                <p>Latensi Sistem</p>
             </div>
         </div>
     </section>
 
-    <section id="developer" class="developer-section">
-        <h2 class="section-title reveal">Dari Sang Developer</h2>
-        <div class="developer-card reveal">
-            <img src="https://cdn.discordapp.com/attachments/1414606152179912714/1431015704508891136/IMG_0715.jpg?ex=690d043a&is=690bb2ba&hm=4a782ac2c64a55bed8ba38a04840c8b08374b58e05e364203e91b2ad19028374&" alt="Developer Avatar" class="developer-avatar">
-            <div class="developer-info">
-                <h3>CIBOO</h3>
-                <p class="developer-title">Owner & Lead Developer of Lucy Bot</p>
-                <p class="developer-bio">Seorang programmer yang bersemangat dalam membangun komunitas online yang lebih baik melalui pengembangan bot Discord yang inovatif dan mudah digunakan.</p>
-                <div class="developer-socials">
-                    <a href="https://cdn.discordapp.com/attachments/1414606152179912714/1431015704508891136/IMG_0715.jpg?ex=690d043a&is=690bb2ba&hm=4a782ac2c64a55bed8ba38a04840c8b08374b58e05e364203e91b2ad19028374&" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
-                    <a href="https://github.com/UnknowV2" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    <section id="features" class="features-section">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Fitur Unggulan</h2>
+            <p class="section-desc">Teknologi terbaru yang kami tanamkan untuk komunitas Anda.</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-icon icon-voice">
+                    <i class="fas fa-microphone-lines"></i>
+                </div>
+                <h3>Voice Hub Ultimate</h3>
+                <p>Sistem <em>Join-to-Create</em>. Member bisa membuat room suara pribadi dan mengelolanya (Lock, Unlock, Kick, Limit) lewat tombol panel.</p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-icon icon-admin">
+                    <i class="fas fa-sliders"></i>
+                </div>
+                <h3>Admin Control Panel</h3>
+                <p>Matikan atau reset fitur server dengan mudah menggunakan GUI Dropdown <code>/panel-lucy</code> tanpa perlu ketik command rumit.</p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-icon icon-premium">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3>User Intelligence</h3>
+                <p>Lacak riwayat perubahan nickname, role, dan status booster member secara mendalam menggunakan fitur Audit Log scraping.</p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-icon icon-eco">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <h3>Ekonomi Global</h3>
+                <p>Sistem uang virtual, toko, transfer, dan minigames (Slot, Card, Dice). Terintegrasi dengan Payment Gateway otomatis.</p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="card-icon icon-ticket">
+                    <i class="fas fa-ticket"></i>
+                </div>
+                <h3>Sistem Tiket</h3>
+                <p>Layanan support profesional dengan fitur Transcript Log (file .txt) dan tombol Claim khusus untuk staff server.</p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="card-icon icon-log">
+                    <i class="fas fa-clipboard-list"></i>
+                </div>
+                <h3>Logging Lengkap</h3>
+                <p>Catat setiap kejadian di server Anda: Pesan dihapus, Member keluar/masuk, Perubahan Role, hingga Voice Log.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="commands" class="commands-section">
+        <div class="content-wrapper">
+            <div class="text-col" data-aos="fade-right">
+                <h2>Lebih dari 50+ Perintah</h2>
+                <p>Lucy Bot dirancang untuk kemudahan. Gunakan Slash Commands (/) untuk interaksi yang modern.</p>
+                
+                <div class="cmd-list">
+                    <div class="cmd-item">
+                        <code>/riwayat-user</code>
+                        <span>Cek history nama & role member (Premium)</span>
+                    </div>
+                    <div class="cmd-item">
+                        <code>/set-voicehub</code>
+                        <span>Setup sistem room suara otomatis</span>
+                    </div>
+                    <div class="cmd-item">
+                        <code>/panel-lucy</code>
+                        <span>Buka panel kontrol admin</span>
+                    </div>
+                    <div class="cmd-item">
+                        <code>/daily</code>
+                        <span>Klaim hadiah koin harian Anda</span>
+                    </div>
+                </div>
+                <a href="#" class="btn-text">Lihat Dokumentasi Lengkap <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="img-col" data-aos="fade-left">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <div class="terminal-body">
+                        <p><span class="user">User:</span> /daily</p>
+                        <p><span class="bot">Lucy Bot:</span> 💰 **Berhasil!** Kamu mendapatkan 1,000 Koin.</p>
+                        <p class="success">[LOG] Balance Updated.</p>
+                        <p><span class="user">User:</span> /panel-lucy</p>
+                        <p><span class="bot">Lucy Bot:</span> 🎛️ Membuka Panel Kontrol Admin...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="developer-section">
+        <div class="dev-container" data-aos="flip-up">
+            <img src="https://cdn.discordapp.com/attachments/1414606152179912714/1431015704508891136/IMG_0715.jpg" alt="CIBOO" class="dev-avatar">
+            <div class="dev-info">
+                <h3>Dikembangkan oleh CIBOO</h3>
+                <p>Membangun bot Discord inovatif untuk komunitas gaming Indonesia.</p>
+                <div class="social-links">
+                    <a href="https://github.com/UnknowV2" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://discord.gg/fZYKGtRmfZ" target="_blank"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        <p>&copy; 2024 Lucy Bot. Dibuat oleh CIBOO.</p>
+        <div class="footer-content">
+            <p>&copy; 2025 Lucy Bot Project. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="TERMS_OF_SERVICE.md">Terms</a>
+                <a href="Privacy-Policy.md">Privacy</a>
+                <a href="report.html">Report Bug</a>
+            </div>
+        </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>
-
-
-
